@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X82-yR-grJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ECD-Rv-suD">
+            <objects>
+                <navigationController id="X82-yR-grJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCy-SE-Kbi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4Pc-CK-2vo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLg-gb-xkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-761" y="82"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCb-XF-aBd">
+                                <rect key="frame" x="152" y="363" width="110.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Начать игру!">
+                                    <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="87i-kw-8ZN" kind="show" id="4hl-DO-C3k"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.55222387118712524" green="0.8256328043631852" blue="0.86078917980194092" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="iCb-XF-aBd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="275" id="ahU-ee-YIk"/>
+                            <constraint firstItem="iCb-XF-aBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rAh-lw-jnM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WIb-Sd-2Qw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="82"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="ScU-3c-v0x">
+            <objects>
+                <viewController id="87i-kw-8ZN" customClass="FirstViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GIE-7F-JsQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8z-w8-dcR">
+                                <rect key="frame" x="174" y="774" width="66" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Далее">
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="2Bo-cb-oll" kind="show" id="M9f-AH-PTr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3p0-fS-NC7">
+                                <rect key="frame" x="173.5" y="298" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Скрой">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="removMoveView" destination="87i-kw-8ZN" eventType="touchUpInside" id="p7C-ui-qJA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cEO-iv-sgO"/>
+                        <color key="backgroundColor" red="1" green="0.96356314340023019" blue="0.64225628912543486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3p0-fS-NC7" firstAttribute="centerX" secondItem="GIE-7F-JsQ" secondAttribute="centerX" id="ejB-zJ-d1b"/>
+                            <constraint firstItem="g8z-w8-dcR" firstAttribute="top" secondItem="3p0-fS-NC7" secondAttribute="bottom" constant="445" id="msS-HT-CE5"/>
+                            <constraint firstItem="g8z-w8-dcR" firstAttribute="centerX" secondItem="GIE-7F-JsQ" secondAttribute="centerX" id="rUF-FJ-Zf4"/>
+                            <constraint firstItem="g8z-w8-dcR" firstAttribute="top" secondItem="cEO-iv-sgO" secondAttribute="top" constant="686" id="uJA-FV-RPv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vHh-gH-gam"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1q1-v5-Tth" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701" y="123"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="j7e-VV-QuL">
+            <objects>
+                <viewController id="2Bo-cb-oll" customClass="SecondViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qjl-QZ-zFW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76L-Ks-wvt">
+                                <rect key="frame" x="176.5" y="819.5" width="61" height="28.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" subtitle="Далее">
+                                    <color key="baseForegroundColor" red="1" green="0.20869595716480893" blue="0.99753367586234687" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="zeD-5q-7rR" kind="show" id="PKS-uN-R7h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PQM-m8-yvu"/>
+                        <color key="backgroundColor" red="0.87940256355726498" green="0.86399841460825133" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="PQM-m8-yvu" firstAttribute="bottom" secondItem="76L-Ks-wvt" secondAttribute="bottom" constant="14" id="KU8-KW-Ona"/>
+                            <constraint firstItem="76L-Ks-wvt" firstAttribute="centerX" secondItem="Qjl-QZ-zFW" secondAttribute="centerX" id="UCP-I4-yUM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SID-ER-kxb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWn-bg-Ve6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392.753623188406" y="219.64285714285714"/>
+        </scene>
+        <!--Last View Controller-->
+        <scene sceneID="xBv-8e-uO8">
+            <objects>
+                <viewController id="zeD-5q-7rR" customClass="LastViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XaQ-B4-Da9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-yj-5V2">
+                                <rect key="frame" x="50" y="706" width="314" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вверх">
+                                    <color key="baseForegroundColor" red="1" green="0.2086959572" blue="0.99753367589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3n7-uq-9e7">
+                                <rect key="frame" x="307" y="706" width="57" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вниз">
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJe-eT-I0v">
+                                <rect key="frame" x="20" y="128" width="73.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Вправо">
+                                    <color key="baseForegroundColor" systemColor="systemGreenColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2H-En-JNR">
+                                <rect key="frame" x="309" y="128" width="65" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Влево"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IhA-Vr-60W"/>
+                        <color key="backgroundColor" red="1" green="0.85971708837637317" blue="0.81082103139117678" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="IhA-Vr-60W" firstAttribute="bottom" secondItem="3n7-uq-9e7" secondAttribute="bottom" constant="125" id="0cY-TW-BIq"/>
+                            <constraint firstItem="SJe-eT-I0v" firstAttribute="top" secondItem="IhA-Vr-60W" secondAttribute="top" constant="40" id="35t-8F-u1C"/>
+                            <constraint firstItem="IhA-Vr-60W" firstAttribute="bottom" secondItem="xgU-yj-5V2" secondAttribute="bottom" constant="125" id="3Fc-Qx-xcw"/>
+                            <constraint firstItem="xgU-yj-5V2" firstAttribute="centerX" secondItem="XaQ-B4-Da9" secondAttribute="centerX" id="CRU-78-Teh"/>
+                            <constraint firstItem="IhA-Vr-60W" firstAttribute="trailing" secondItem="O2H-En-JNR" secondAttribute="trailing" constant="40" id="buk-gd-lmK"/>
+                            <constraint firstItem="O2H-En-JNR" firstAttribute="top" secondItem="IhA-Vr-60W" secondAttribute="top" constant="40" id="edO-28-DJz"/>
+                            <constraint firstItem="SJe-eT-I0v" firstAttribute="leading" secondItem="IhA-Vr-60W" secondAttribute="leading" constant="20" id="fR7-x0-Gam"/>
+                            <constraint firstItem="IhA-Vr-60W" firstAttribute="trailing" secondItem="3n7-uq-9e7" secondAttribute="trailing" constant="50" id="kXT-yH-3Be"/>
+                            <constraint firstItem="xgU-yj-5V2" firstAttribute="leading" secondItem="IhA-Vr-60W" secondAttribute="leading" constant="50" id="kiL-mV-ICq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="XCc-on-5cu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Crz-h6-oaM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="238"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
