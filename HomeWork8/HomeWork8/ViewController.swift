@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Главное меню"
+        
+        let barButton = UIBarButtonItem(title: "next", style: .done, target: self, action: #selector (didTapNextScreen ))
+        navigationItem.rightBarButtonItem = barButton
+        
     }
     @IBAction func didTapNextScreen() {
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -21,7 +26,9 @@ class ViewController: UIViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+//        self.present(viewController, animated: true)
     }
     @IBAction func didTapSettingsScreen() {
         let str: UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
@@ -29,7 +36,9 @@ class ViewController: UIViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+//        self.present(viewController, animated: true)
     }
     @IBAction func didTapScreenScreen() {
         let str: UIStoryboard = UIStoryboard(name: "Screen", bundle: nil)
@@ -37,7 +46,9 @@ class ViewController: UIViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
+      
+//        self.present(viewController, animated: true)
     }}
 
 

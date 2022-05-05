@@ -19,7 +19,7 @@ class FiveViewController: UIViewController {
         firstLable.text = customTitle
     }
     @IBAction func didTapClose() {
-        self.dismiss(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

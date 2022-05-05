@@ -25,10 +25,11 @@ class FourViewController: UIViewController {
         viewController.customTitle = "Hello Liza!"
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        self.present(viewController, animated: true)
     }
-    @IBAction func didTapClose() {
-        self.dismiss(animated: true)
-    }
+//    @IBAction func didTapClose() {
+//        self.dismiss(animated: true)
+//    }
 }
 

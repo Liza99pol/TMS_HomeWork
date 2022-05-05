@@ -73,6 +73,7 @@
                             <constraint firstItem="JrT-bj-pXn" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lQG-q1-K2g"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7PQ-JY-dSh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,6 +12,7 @@ class ScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Гонки"
     }
     
     @IBAction func didTapNextScreen() {
@@ -21,7 +22,9 @@ class ScreenViewController: UIViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+       
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        self.present(viewController, animated: true)
     }
     @IBAction func didTapSecondScreen() {
         let str: UIStoryboard = UIStoryboard(name: "Screen", bundle: nil)
@@ -30,7 +33,8 @@ class ScreenViewController: UIViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        self.present(viewController, animated: true)
     }
     @IBAction func didTapLastScreen() {
         let str: UIStoryboard = UIStoryboard(name: "Screen", bundle: nil)
@@ -39,9 +43,10 @@ class ScreenViewController: UIViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         
-        self.present(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        self.present(viewController, animated: true)
 }
     @IBAction func didTapClose() {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 }

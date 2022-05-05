@@ -28,7 +28,7 @@ class SettingsTwoViewController: UIViewController {
             LastLable.text = user2?.name2
     }
     @IBAction func didTapClose() {
-        self.dismiss(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

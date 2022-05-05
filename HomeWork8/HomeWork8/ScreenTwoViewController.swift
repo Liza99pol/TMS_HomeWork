@@ -12,10 +12,11 @@ class ScreenTwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Игра началась"
     }
     
     
-    
+//
     @IBAction func didTapClose() {
         self.dismiss(animated: true)
     }

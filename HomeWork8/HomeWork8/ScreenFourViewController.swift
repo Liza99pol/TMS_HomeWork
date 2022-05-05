@@ -12,6 +12,7 @@ class ScreenFourViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "Настройки"
     }
     
     @IBAction func didTapClose() {
