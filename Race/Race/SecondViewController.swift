@@ -35,20 +35,22 @@ class SecondViewController: UIViewController {
         self.view.addSubview(woodView)
         
         
-        let timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(moveToWood), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToWood), userInfo: nil, repeats: true)
         
         moveToCenter()
-        moveToWood()
+//        moveToWood()
         
         
         
     }
+    
+    
    @objc func moveToWood() {
         self.woodView.frame = CGRect(x: 200, y: 0, width: 100, height: 100)
-        UIView.animate(withDuration: 5) {
+        UIView.animate(withDuration: 3) {
             self.woodView.frame = CGRect(x: 300, y: 1000, width: 100, height: 100)
         } completion: { _ in
-            self.moveToWood()
+//            self.moveToWood()
         }
 
     }
