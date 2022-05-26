@@ -7,6 +7,19 @@
 
 import UIKit
 
+extension UIImageView {
+    
+    func shadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.blue.cgColor
+        layer.shadowOpacity = 0.4
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 15
+        
+    }
+    
+}
+
 class SecondViewController: UIViewController {
 
     var imageView = UIImageView()
@@ -16,6 +29,9 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        imageView.shadow()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

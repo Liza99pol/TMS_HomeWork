@@ -7,6 +7,17 @@
 
 import UIKit
 
+extension UIView {
+    
+    func drawShadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 5
+    }
+}
+
 class ViewController: UIViewController {
 
     var imagView: UIView = UIView()
@@ -14,6 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        imagView.drawShadow()
+        
         
         imagView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         imagView.backgroundColor = .green
