@@ -47,22 +47,32 @@
                                     <action selector="didTapNextScreen" destination="BYZ-38-t0r" eventType="touchUpInside" id="rw7-qy-guV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMp-fv-GpY">
+                                <rect key="frame" x="135" y="109" width="160" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="lIS-WO-Lkl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="0Fs-Z3-obW"/>
                             <constraint firstItem="lIS-WO-Lkl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aSt-3w-oPj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TMp-fv-GpY" secondAttribute="trailing" constant="119" id="e3W-cu-Xfd"/>
+                            <constraint firstItem="TMp-fv-GpY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="mmh-Nb-68g"/>
+                            <constraint firstItem="TMp-fv-GpY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="oN8-Yw-5bX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CKy-cj-dGT"/>
                     <connections>
                         <outlet property="button" destination="lIS-WO-Lkl" id="51P-eF-iLk"/>
+                        <outlet property="label" destination="TMp-fv-GpY" id="HAZ-fv-d6H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="82"/>
+            <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="bPI-Gw-VVR">

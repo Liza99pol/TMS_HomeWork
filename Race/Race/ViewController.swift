@@ -23,13 +23,33 @@ extension UIButton {
 }
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var label: UILabel!
 
     @IBOutlet var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.title = "Гонки"
+//        self.title = "Гонки"
+        
+        for family in UIFont.familyNames.sorted(){
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        
+        
+        let string = "Гонки"
+        
+        let shadow = NSShadow()
+        shadow.shadowBlurRadius = 3
+        shadow.shadowColor = UIColor.gray
+        shadow.shadowOffset = CGSize(width: 3, height: 3)
+    
+        let attributed: [NSAttributedString.Key: Any] = [NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont(name: "BalsamiqSans-BoldItalic", size: 30), NSAttributedString.Key.shadow: shadow ]
+        
+        let attrString = NSAttributedString(string: string, attributes: attributed)
+        label.attributedText = attrString
 
         button.drawShadow()
         button.cornerRadius(radius: 10)
