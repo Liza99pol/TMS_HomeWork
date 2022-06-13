@@ -13,6 +13,11 @@ class SecondViewController: UIViewController {
     var imageView = UIImageView()
     var woodView = UIImageView()
     
+    var gameLiveTimer:Timer?
+    var gameLiveTimer2:Timer?
+    var woodTimer:Timer?
+    var bushTimer:Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,7 +30,7 @@ class SecondViewController: UIViewController {
         self.view.addSubview(imageView)
         
         let bush = UIImage(named: "bush")
-        bushView = UIImageView(frame: CGRect(x: -0, y: -0, width: 100, height: 100))
+        bushView = UIImageView(frame: CGRect(x: 800, y: -0, width: 100, height: 100))
         bushView.image = bush
         self.view.addSubview(bushView)
         
@@ -35,9 +40,11 @@ class SecondViewController: UIViewController {
         self.view.addSubview(woodView)
         
         
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToWood), userInfo: nil, repeats: true)
+       gameLiveTimer =  Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(moveToWood), userInfo: nil, repeats: true)
         
-        moveToCenter()
+        gameLiveTimer2 = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(moveToCenter), userInfo: nil, repeats: true)
+        
+//        moveToCenter()
 //        moveToWood()
         
         
@@ -46,26 +53,56 @@ class SecondViewController: UIViewController {
     
     
    @objc func moveToWood() {
+       
+       woodTimer?.invalidate()
         self.woodView.frame = CGRect(x: 200, y: 0, width: 100, height: 100)
-        UIView.animate(withDuration: 3) {
-            self.woodView.frame = CGRect(x: 300, y: 1000, width: 100, height: 100)
-        } completion: { _ in
+       
+       
+       
+       woodTimer = Timer.scheduledTimer(withTimeInterval: 0.004, repeats: true) { timer in
+           self.woodView.frame.origin.y += 2
+           if self.woodView.frame.intersects(self.imageView.frame) {
+               
+               self.woodTimer?.invalidate()
+               self.gameLiveTimer?.invalidate()
+               self.showError(title: "", message: "")
+              
+               
+           }
+       }
+       
+//        UIView.animate(withDuration: 3) {
+//            self.woodView.frame = CGRect(x: 300, y: 1000, width: 100, height: 100)
+//        } completion: { _ in
 //            self.moveToWood()
-        }
+//        }
 
     }
     
     
     
-        func moveToCenter() {
-           
+       @objc func moveToCenter() {
+           bushTimer?.invalidate()
         self.bushView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
 
-        UIView.animate(withDuration: 4) {
-        self.bushView.frame = CGRect(x: 0, y: 1000, width: 100, height: 100)
-        } completion: { _ in
-            self.moveToCenter()
-        }
+           bushTimer = Timer.scheduledTimer(withTimeInterval: 0.007, repeats: true, block: { timer in
+               self.bushView.frame.origin.y += 2
+               if self.bushView.frame.intersects(self.imageView.frame) {
+                   
+                   self.bushTimer?.invalidate()
+                   self.gameLiveTimer2?.invalidate()
+                   self.showError(title: "", message: "")
+               }
+           })
+       
+           
+           
+           
+//        UIView.animate(withDuration: 4) {
+//        self.bushView.frame = CGRect(x: 0, y: 1000, width: 100, height: 100)
+//        } completion: { _ in
+//            self.moveToCenter()
+//        }
             
             
 //        UIView.animate(withDuration: 3) {
@@ -102,4 +139,19 @@ class SecondViewController: UIViewController {
         
     }
 
+}
+extension  UIViewController {
+    
+    func showError(title: String, message: String) {
+        let allertViewController = UIAlertController(title: "Вы проиграли", message: "Для выхода нажмите <OK>", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default) { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        }
+        
+        allertViewController.addAction(okButton)
+        self.present(allertViewController, animated: true)
+        
+    }
+    
 }

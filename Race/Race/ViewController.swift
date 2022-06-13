@@ -11,7 +11,7 @@ extension UIButton {
     
     func drawShadow() {
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.orange.cgColor
+        layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize(width: -1, height: 1)
         layer.shadowRadius = 10
@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     @IBOutlet var label: UILabel!
 
     @IBOutlet var button: UIButton!
+    @IBOutlet var button2: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +55,9 @@ class ViewController: UIViewController {
         button.drawShadow()
         button.cornerRadius(radius: 10)
         
+        button2.drawShadow()
+        button2.cornerRadius(radius: 10)
+        
     }
     @IBAction func didTapNextScreen() {
         let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,6 +69,17 @@ class ViewController: UIViewController {
        
         self.navigationController?.pushViewController(viewController, animated: true)
 
+    }
+    
+    @IBAction func didTapThreeScreen() {
+       
+        let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController: ThreeViewController = str.instantiateViewController(withIdentifier: "ThreeViewController") as! ThreeViewController
+        
+        viewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        
     }
 
 }

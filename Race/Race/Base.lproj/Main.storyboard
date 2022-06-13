@@ -53,11 +53,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-QK-zhA">
+                                <rect key="frame" x="130.5" y="421" width="153" height="43"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Настройки">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                    <color key="baseForegroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapThreeScreen" destination="BYZ-38-t0r" eventType="touchUpInside" id="agU-J6-NbF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="lIS-WO-Lkl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="250" id="0Fs-Z3-obW"/>
+                            <constraint firstItem="vdk-QK-zhA" firstAttribute="top" secondItem="lIS-WO-Lkl" secondAttribute="bottom" constant="40" id="0S9-YB-lBq"/>
+                            <constraint firstItem="vdk-QK-zhA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LhJ-uc-p82"/>
                             <constraint firstItem="lIS-WO-Lkl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aSt-3w-oPj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TMp-fv-GpY" secondAttribute="trailing" constant="119" id="e3W-cu-Xfd"/>
                             <constraint firstItem="TMp-fv-GpY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="135" id="mmh-Nb-68g"/>
@@ -67,6 +80,7 @@
                     <navigationItem key="navigationItem" id="CKy-cj-dGT"/>
                     <connections>
                         <outlet property="button" destination="lIS-WO-Lkl" id="51P-eF-iLk"/>
+                        <outlet property="button2" destination="vdk-QK-zhA" id="mxR-Ay-nvK"/>
                         <outlet property="label" destination="TMp-fv-GpY" id="HAZ-fv-d6H"/>
                     </connections>
                 </viewController>
@@ -100,9 +114,116 @@
             </objects>
             <point key="canvasLocation" x="685.50724637681162" y="81.696428571428569"/>
         </scene>
+        <!--Three View Controller-->
+        <scene sceneID="ea1-S4-AaZ">
+            <objects>
+                <viewController storyboardIdentifier="ThreeViewController" id="rd2-xN-Is2" customClass="ThreeViewController" customModule="Race" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Afq-6J-YRD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки игры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj7-dU-bQa">
+                                <rect key="frame" x="126" y="54" width="162" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя игрока" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-Um-OsT">
+                                <rect key="frame" x="36" y="134" width="119.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c73-Fe-pKW">
+                                <rect key="frame" x="36" y="168" width="339" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите цвет машины" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrH-eJ-Xki">
+                                <rect key="frame" x="36" y="293" width="245.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите препятствие" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUE-UT-Wed">
+                                <rect key="frame" x="36" y="462" width="238" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CgJ-Ci-7R8">
+                                <rect key="frame" x="36" y="509" width="289" height="32"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <segments>
+                                    <segment title="Кусты"/>
+                                    <segment title="Машины"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aw-O1-ww1">
+                                <rect key="frame" x="259.5" y="773" width="134.5" height="38"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Сохранить ">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveSettings" destination="rd2-xN-Is2" eventType="touchUpInside" id="A60-3m-dbJ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="23B-RT-2ah">
+                                <rect key="frame" x="36" y="340" width="289" height="32"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <segments>
+                                    <segment title="Оранжевая"/>
+                                    <segment title="Синяя"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kp9-pJ-yCd"/>
+                        <color key="backgroundColor" red="0.59009759844443743" green="0.79645358768578978" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="c73-Fe-pKW" firstAttribute="leading" secondItem="Kp9-pJ-yCd" secondAttribute="leading" constant="36" id="22u-jk-Qwt"/>
+                            <constraint firstItem="Kp9-pJ-yCd" firstAttribute="trailing" secondItem="6aw-O1-ww1" secondAttribute="trailing" constant="20" id="8Lv-O7-hXr"/>
+                            <constraint firstItem="23B-RT-2ah" firstAttribute="top" secondItem="mrH-eJ-Xki" secondAttribute="bottom" constant="20.5" id="C06-re-XBw"/>
+                            <constraint firstItem="c73-Fe-pKW" firstAttribute="top" secondItem="V7q-Um-OsT" secondAttribute="bottom" constant="7.5" id="DWn-6r-MHU"/>
+                            <constraint firstItem="Kp9-pJ-yCd" firstAttribute="trailing" secondItem="CgJ-Ci-7R8" secondAttribute="trailing" constant="89" id="FSF-aO-mbm"/>
+                            <constraint firstItem="V7q-Um-OsT" firstAttribute="top" secondItem="Kp9-pJ-yCd" secondAttribute="top" constant="90" id="IUi-jV-ub6"/>
+                            <constraint firstItem="V7q-Um-OsT" firstAttribute="leading" secondItem="Kp9-pJ-yCd" secondAttribute="leading" constant="36" id="IwP-Su-fys"/>
+                            <constraint firstItem="Kp9-pJ-yCd" firstAttribute="bottom" secondItem="6aw-O1-ww1" secondAttribute="bottom" constant="51" id="Ixz-5O-Jnl"/>
+                            <constraint firstItem="23B-RT-2ah" firstAttribute="leading" secondItem="Kp9-pJ-yCd" secondAttribute="leading" constant="36" id="KhC-cJ-dXZ"/>
+                            <constraint firstItem="sj7-dU-bQa" firstAttribute="centerX" secondItem="Afq-6J-YRD" secondAttribute="centerX" id="WIR-Hq-IT6"/>
+                            <constraint firstItem="dUE-UT-Wed" firstAttribute="leading" secondItem="Kp9-pJ-yCd" secondAttribute="leading" constant="36" id="X5P-cV-FZQ"/>
+                            <constraint firstItem="sj7-dU-bQa" firstAttribute="top" secondItem="Kp9-pJ-yCd" secondAttribute="top" constant="10" id="YcH-5o-JI2"/>
+                            <constraint firstItem="mrH-eJ-Xki" firstAttribute="top" secondItem="c73-Fe-pKW" secondAttribute="bottom" constant="91" id="gji-fc-eVO"/>
+                            <constraint firstItem="Kp9-pJ-yCd" firstAttribute="trailing" secondItem="c73-Fe-pKW" secondAttribute="trailing" constant="39" id="ka3-9G-mng"/>
+                            <constraint firstItem="CgJ-Ci-7R8" firstAttribute="leading" secondItem="Kp9-pJ-yCd" secondAttribute="leading" constant="36" id="lme-OD-aOk"/>
+                            <constraint firstItem="dUE-UT-Wed" firstAttribute="top" secondItem="23B-RT-2ah" secondAttribute="bottom" constant="91" id="mqq-c1-4rF"/>
+                            <constraint firstItem="Kp9-pJ-yCd" firstAttribute="trailing" secondItem="23B-RT-2ah" secondAttribute="trailing" constant="89" id="uaE-O5-riG"/>
+                            <constraint firstItem="mrH-eJ-Xki" firstAttribute="leading" secondItem="Kp9-pJ-yCd" secondAttribute="leading" constant="36" id="vpg-tI-yKx"/>
+                            <constraint firstItem="CgJ-Ci-7R8" firstAttribute="top" secondItem="dUE-UT-Wed" secondAttribute="bottom" constant="20.5" id="zd2-AQ-p5W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barrier" destination="CgJ-Ci-7R8" id="Qyb-BC-m8u"/>
+                        <outlet property="carColor" destination="23B-RT-2ah" id="QgL-xA-w2J"/>
+                        <outlet property="nameUser" destination="c73-Fe-pKW" id="KzP-hR-STh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjx-Lf-jjv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353.6231884057972" y="81.696428571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="road1" width="450" height="900"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -111,6 +232,12 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
