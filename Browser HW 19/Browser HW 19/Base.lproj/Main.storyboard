@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Browser_HW_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-jR-kZ9">
+                                <rect key="frame" x="149.5" y="432.5" width="115.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open Browser"/>
+                                <connections>
+                                    <segue destination="K2X-zV-TFk" kind="show" id="LzW-C9-BDy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zd8-jR-kZ9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BPb-1M-RTY"/>
+                            <constraint firstItem="zd8-jR-kZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wp8-d2-lXA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="82"/>
+        </scene>
+        <!--Browser View Controller-->
+        <scene sceneID="tmj-Wf-uCO">
+            <objects>
+                <viewController storyboardIdentifier="BrowserViewController" id="K2X-zV-TFk" customClass="BrowserViewController" customModule="Browser_HW_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hso-fN-Tg4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-gl-5Oz">
+                                <rect key="frame" x="0.0" y="123" width="414" height="569"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hI-gk-v75">
+                                <rect key="frame" x="31" y="749" width="47" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="backInfo" destination="K2X-zV-TFk" eventType="touchUpInside" id="GnE-Tq-e9n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-Kx-gX0">
+                                <rect key="frame" x="338" y="749" width="47" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextInfo" destination="K2X-zV-TFk" eventType="touchUpInside" id="FcO-bC-nL6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20Y-4q-2ir">
+                                <rect key="frame" x="348" y="51" width="46" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="search" destination="K2X-zV-TFk" eventType="touchUpInside" id="i6K-aF-jrX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Поиск" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tu6-1s-445">
+                                <rect key="frame" x="20" y="48" width="320" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Xcd-zd-xD2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VB7-w5-A2A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VB7-w5-A2A" firstAttribute="trailing" secondItem="CNj-Kx-gX0" secondAttribute="trailing" constant="29" id="80A-Ex-koM"/>
+                            <constraint firstItem="VB7-w5-A2A" firstAttribute="bottom" secondItem="aHh-gl-5Oz" secondAttribute="bottom" constant="116" id="GpI-30-TNT"/>
+                            <constraint firstItem="aHh-gl-5Oz" firstAttribute="top" secondItem="VB7-w5-A2A" secondAttribute="top" constant="123" id="Id6-KU-Iky"/>
+                            <constraint firstItem="aHh-gl-5Oz" firstAttribute="trailing" secondItem="VB7-w5-A2A" secondAttribute="trailing" id="NsY-Ch-F1P"/>
+                            <constraint firstItem="8hI-gk-v75" firstAttribute="leading" secondItem="VB7-w5-A2A" secondAttribute="leading" constant="31" id="PAK-Vl-gaz"/>
+                            <constraint firstItem="VB7-w5-A2A" firstAttribute="trailing" secondItem="20Y-4q-2ir" secondAttribute="trailing" constant="20" id="Vvo-r7-pKv"/>
+                            <constraint firstItem="20Y-4q-2ir" firstAttribute="top" secondItem="VB7-w5-A2A" secondAttribute="top" constant="51" id="b66-kE-w7Q"/>
+                            <constraint firstItem="VB7-w5-A2A" firstAttribute="bottom" secondItem="CNj-Kx-gX0" secondAttribute="bottom" constant="28" id="cma-lb-g2m"/>
+                            <constraint firstItem="aHh-gl-5Oz" firstAttribute="leading" secondItem="VB7-w5-A2A" secondAttribute="leading" id="gRD-kl-Wht"/>
+                            <constraint firstItem="VB7-w5-A2A" firstAttribute="bottom" secondItem="8hI-gk-v75" secondAttribute="bottom" constant="28" id="s8D-du-c9b"/>
+                            <constraint firstItem="Tu6-1s-445" firstAttribute="leading" secondItem="VB7-w5-A2A" secondAttribute="leading" constant="20" id="tg9-07-0pf"/>
+                            <constraint firstItem="Tu6-1s-445" firstAttribute="top" secondItem="VB7-w5-A2A" secondAttribute="top" constant="48" id="w8R-Wp-JFj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="p2d-z0-WGS"/>
+                    <connections>
+                        <outlet property="textField" destination="Tu6-1s-445" id="4E5-bE-njU"/>
+                        <outlet property="webView" destination="aHh-gl-5Oz" id="iyt-TO-FYP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lA7-CD-714" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.00000000000011" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
