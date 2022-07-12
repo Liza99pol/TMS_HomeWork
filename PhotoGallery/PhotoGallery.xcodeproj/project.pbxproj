@@ -14,6 +14,7 @@
 		8198EE88285B6DD5006B89C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8198EE87285B6DD5006B89C0 /* Assets.xcassets */; };
 		8198EE8B285B6DD5006B89C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8198EE89285B6DD5006B89C0 /* LaunchScreen.storyboard */; };
 		8198EE93285B6ED3006B89C0 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8198EE92285B6ED3006B89C0 /* GalleryView.swift */; };
+		81D9B920287861D8001B7F0D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D9B91F287861D8001B7F0D /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8198EE8A285B6DD5006B89C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8198EE8C285B6DD5006B89C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8198EE92285B6ED3006B89C0 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		81D9B91F287861D8001B7F0D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				8198EE89285B6DD5006B89C0 /* LaunchScreen.storyboard */,
 				8198EE8C285B6DD5006B89C0 /* Info.plist */,
 				8198EE92285B6ED3006B89C0 /* GalleryView.swift */,
+				81D9B91F287861D8001B7F0D /* CollectionViewCell.swift */,
 			);
 			path = PhotoGallery;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D9B920287861D8001B7F0D /* CollectionViewCell.swift in Sources */,
 				8198EE83285B6DD5006B89C0 /* ViewController.swift in Sources */,
 				8198EE7F285B6DD5006B89C0 /* AppDelegate.swift in Sources */,
 				8198EE81285B6DD5006B89C0 /* SceneDelegate.swift in Sources */,
