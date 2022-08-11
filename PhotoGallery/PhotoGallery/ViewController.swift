@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainAccess
 
 class ViewController: UIViewController {
 
@@ -21,11 +22,21 @@ class ViewController: UIViewController {
         let okAction = UIAlertAction(title: "Войти", style: .default) { _ in
             
             if let textField = alertViewController.textFields?[0] {
-                print(textField.text)
+                
+                let keychain = Keychain(service: "com.tms.PhotoGallery")
+                keychain["login"] = "\(textField.text)"
+                
+                print(keychain["login"])
             }
             if let textField = alertViewController.textFields?[1] {
-                print(textField.text)
+                
+                let keychain = Keychain(service: "com.tms.PhotoGallery")
+                keychain["password"] = "\(textField.text)"
+                
+                print(keychain["password"])
             }
+            
+            
             let str: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController: GalleryView = str.instantiateViewController(withIdentifier: "GalleryView") as! GalleryView
             
